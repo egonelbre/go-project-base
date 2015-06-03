@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Simple Project Setup</title>
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+	<div id="container" class="panel">
+		<h1>Project Bootstrap</h1>
+		<h2>For Amazon ElasticBeanstalk</h2>
+
+		<p>Current time is {{ .Time }}</p>
+
+		<table>
+			{{ range .Entries }}
+			<tr><td>{{.ID}}</td><td>{{.Message}}</td></tr>
+			{{ end }}
+		</table>
+
+		{{ if .Errors }}
+		<div class="errors">
+			<b>Errors:</b>
+			{{ range .Errors }}
+			<p>{{ . }}</p>
+			{{ end }}
+		</div>
+		{{ end }}
+	</div>
+</body>
+</html>
